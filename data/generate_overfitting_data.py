@@ -46,7 +46,7 @@ def results_df(models, betas_true, x_train, y_train, x_test, y_test):
     [m.fit(x_train, y_train) for m in models]
 
     betas = np.vstack([betas_true] + [m.coef_ for m in models])
-    beta_names = ['Beta ' + str(i) for i in range(ndim)]
+    beta_names = [f'Beta {str(i)}' for i in range(ndim)]
 
     # set up model names
     model_names =  ["True Coefs"] + [model_name(m) for m in models]
